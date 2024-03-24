@@ -4,7 +4,7 @@ import re
 import pandas as pd
 
 def query_openai_and_parse_response(job_title):
-    openai.api_key = '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'
+    openai.api_key = 'yourkey_here'
     client = OpenAI()
     response = client.chat.completions.create(
         model="gpt-4-turbo-preview",
@@ -32,13 +32,9 @@ def query_openai_and_parse_response(job_title):
     percentages = re.findall(r"\d+%", bot_response)
     education_levels = ["None", "Highschool", "Associates", "Bachelors", "Masters", "PhD", "Doctorate", "Professional Certificate"]
     response_lines = bot_response.split('\n')
-
-    # Extract education level from the 6th line
     education_level_line = response_lines[5]  # Get the 6th line (index 5)
     education_level_match = [level for level in education_levels if level.lower() in education_level_line.lower()]
     education_level = education_level_match[0] if education_level_match else "Unknown"
-
-    # Extract NAICS code from the last line
     naics_code_line = response_lines[-1]  # Get the last line
     naics_code_match = re.search(r'\d{2}', naics_code_line)
     naics_code = naics_code_match.group() if naics_code_match else "Unknown"
