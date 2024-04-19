@@ -3,7 +3,7 @@ import matplotlib.pyplot as plt
 import numpy as np
 
 # Path to the CSV file
-csv_file_path = "/Users/morgandixon/Desktop/econdata/econ_paper_data.csv"
+csv_file_path = "econ_paper_data.csv"
 
 def average_rp_by_education(csv_file_path):
     education_rp_sum = {}
