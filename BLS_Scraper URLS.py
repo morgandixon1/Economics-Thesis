@@ -2,7 +2,7 @@ from selenium import webdriver
 from selenium.webdriver.common.by import By
 import pandas as pd
 
-chrome_driver_path = "C:\\Users\\kylan\\Downloads\\chromedriver-win64\\chromedriver-win64\\chromedriver.exe"
+chrome_driver_path = "chromedriver.exe"
 driver = webdriver.Chrome(executable_path=chrome_driver_path)
 driver.get("https://www.bls.gov/ooh/a-z-index.htm")
 
