@@ -45,7 +45,7 @@ def query_openai_and_parse_response(job_title):
         'naics_code': naics_code
     }
 
-csv_file_path = 'C:/Users/kylan/Downloads/jobs.csv'
+csv_file_path = 'jobs.csv'
 df = pd.read_csv(csv_file_path)
 
 
